@@ -1,35 +1,17 @@
-package com.dataOne.userService.entity;
+package com.dataOne.userService.model;
 
-import java.sql.Timestamp;
+public class UserRegistrationForm {
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-
-@Entity
-public class User {
-
-	@Column
-	@Id
-	@GeneratedValue
-	private Integer id;
-
-	@Column
 	private String firstName;
 	
-	@Column
 	private String lastName;
 	
-	@Column
 	private String email;
 	
-	@Column
 	private String password;
 
-	@Column
-	private Timestamp joiningTime;
+	private String rePassword;
+	
 
 	
 	public void setFirstName(String firstName) {
@@ -48,8 +30,8 @@ public class User {
 		this.password = password;
 	}
 	
-	public void setJoiningTime(Timestamp joiningTime) {
-		this.joiningTime = joiningTime;
+	public void serRePassword(String rePassword) {
+		this.rePassword = rePassword;
 	}
 	
 	public String getFirstName() {
@@ -67,7 +49,8 @@ public class User {
 		return this.password;
 	}
 	
-	public Timestamp getJoiningTime() {
-		return this.joiningTime;
+	public String getRePassword() {
+		return this.rePassword;
 	}
+
 }

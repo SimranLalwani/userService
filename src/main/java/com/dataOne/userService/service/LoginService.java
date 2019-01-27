@@ -1,6 +1,9 @@
 package com.dataOne.userService.service;
 
+import com.dataOne.userService.entity.User;
+
 public interface LoginService {
 
-	public boolean doLogin(String username, String password);
+	public User doLogin(String email, String password);
+	
 }

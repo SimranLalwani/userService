@@ -12,13 +12,14 @@ public class LoginServiceImpl implements LoginService{
 	@Autowired
 	UserRepository userRepo;
 
-	public boolean doLogin(String username, String password){
+	public User doLogin(String email, String password){
 		
-		User user = userRepo.findUserByUsername(username);
+		User user = userRepo.findUserByEmail(email);
 
 		
-		if(user != null && user.getUsername().equals(username) && user.getPassword().equals(password))
-			return true;
-		return false;
+		if(user != null && user.getPassword().equals(password))
+			return user;
+		else
+			return null;
 	}
 }
